@@ -5,3 +5,7 @@ in Spring. Seems as spring does have some advantages.
 
 It's based on http://java.dzone.com/articles/crud-using-spring-data-rest
 
+Unfortunately some parts were missing, or not quite obvious. So tried to
+extend it, that it is understandable for me.
+
+
