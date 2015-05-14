@@ -8,65 +8,63 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="binary_data")
+@Table(name = "binary_data")
 public class BinaryData {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    
-    @Column
-    private String description;
-    
-    @Column
-    private int langId;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
 
-    public int getId() {
-        return id;
-    }
+	@Column
+	private String description;
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	@Column
+	private int langId;
 
-    public String getDescription() {
-        return description;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public int getLangId() {
-        return langId;
-    }
+	public String getDescription() {
+		return description;
+	}
 
-    public void setLangId(int langId) {
-        this.langId = langId;
-    }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + id;
-        return result;
-    }
+	public int getLangId() {
+		return langId;
+	}
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        BinaryData other = (BinaryData) obj;
-        if (id != other.id)
-            return false;
-        return true;
-    }
-    
-    
-    
+	public void setLangId(int langId) {
+		this.langId = langId;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + id;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		BinaryData other = (BinaryData) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+
 }
