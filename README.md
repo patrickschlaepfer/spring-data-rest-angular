@@ -9,3 +9,6 @@ Unfortunately some parts were missing, or not quite obvious. So tried to
 extend it, that it is understandable for me.
 
 
+## TODO
+
+Better js/css management. This is very ugly right now.

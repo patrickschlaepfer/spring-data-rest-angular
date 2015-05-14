@@ -8,7 +8,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.schlaepfer.springservice.entity.BinaryData;
 
-@RepositoryRestResource(collectionResourceRel = "binarydata", path = "binarydata")
+@RepositoryRestResource(collectionResourceRel = "binarydatas", path = "binarydatas")
 public interface BinaryDataRepository extends PagingAndSortingRepository<BinaryData, Integer> {
 
 	List<BinaryData> findByLangId(@Param("langid") int langId);

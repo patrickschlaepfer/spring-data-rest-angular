@@ -1,20 +1,15 @@
-var landiApp = angular.module("landiApp", [ 'ngResource' ]);
+'use strict';
 
-landiApp.controller("HttpController", [ '$scope', '$resource',
-		function($scope, $resource) {
-			//
-			// GET Action Method
-			//
-			var User = $resource('/user/:userId', {userId:'@userId'});
-			User.get( {userId:25}, function(user){
-				$scope.profile = user;
-			})
-			//
-			// Query Action Method
-			//
-			var BinaryData = $resource('/binarydata');
-			BinaryData.query(function(binarydatas){
-				$scope.binarydatas = binarydatas;					
-			});
-		} ]);
+var landiApp = angular.module("landiApp", [ 'ngResource' , 'spring-data-rest' ]);
 			
+landiApp.controller('SamplesListEmbeddedItemsController', function ($scope, $http, SpringDataRestAdapter) {
+	console.log('hallo');
+    var httpPromise = $http.get('/binarydatas').success(function (response) {
+        $scope.response = angular.toJson(response, true);
+    });
+
+    SpringDataRestAdapter.process(httpPromise).then(function (processedResponse) {
+        $scope.binarydatas = processedResponse._embeddedItems;
+        $scope.processedResponse = angular.toJson(processedResponse, true);
+    });
+})
